@@ -1,0 +1,23 @@
+gitignore
+# Clases compiladas y salidas
+*.class
+bin/
+target/
+build/
+out/
+
+# Archivos de Eclipse y metadatos del entorno
+.metadata/
+tmp/
+*.tmp
+*.bak
+*.swp
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Paquetes y dependencias locales
+*.jar
+*.war
+*.ear
