@@ -9,7 +9,6 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu();
-			System.out.print("Elige tu opción:");
 			option = leerOpcion();
 			ejecutaMenu(option);
 		} while (option != 0);
@@ -19,13 +18,14 @@ public class Main {
 	public static void mostrarMenu() {
 		System.out.println("PrintDex menu:\n" + "1.Calculadora\n" + "2.Pedidos\n" + "3.Impresiones\n" + "4.Inventario\n"
 				+ "5.Registro\n" + "6.Estadísticas\n" + "7.Configuración\n" + "0.Salir");
+		System.out.print("Elige tu opción:");
 	}
 
 	public static void ejecutaMenu(int option) {
 		switch (option) {
 		case 1 -> System.out.println("Proximamente calculadora");
-		case 2 -> abrirSubmenuPedidos();		
-		case 3 -> System.out.println("Proximamente impresiones");
+		case 2 -> abrirSubmenuPedidos();
+		case 3 -> abrirSubmenuImpresiones();
 		case 4 -> System.out.println("Proximamente inventario");
 		case 5 -> System.out.println("Proximamente registro");
 		case 6 -> System.out.println("Proximamente estadísticas");
@@ -37,14 +37,19 @@ public class Main {
 	}
 
 	public static void abrirSubmenuPedidos() {
-		int option=0;
+		int option = 0;
 		do {
+			mostrarSubmenuPedidos();
+			option = leerOpcion();
+			ejecutaSubmenuPedidos(option);
+		} while (option != 0);
+	}
+
+	public static void mostrarSubmenuPedidos() {
 		System.out.println("Pedidos:\n" + "1.Registrar pedido\n" + "2.Pedidos en curso\n" + "3.Historial de pedidos\n"
 				+ "0.Volver al menu anterior");
 		System.out.print("Elige tu opción:");
-		option=leerOpcion();
-		ejecutaSubmenuPedidos(option);
-		}while(option!=0);
+
 	}
 
 	public static void ejecutaSubmenuPedidos(int option) {
@@ -56,6 +61,32 @@ public class Main {
 		case 0 -> System.out.println("Vuelves al menu anterior");
 		default -> System.out.println("Has elegido una opción incorrecta");
 
+		}
+	}
+
+	public static void abrirSubmenuImpresiones() {
+		int option = 0;
+		do {
+			mostrarSubmenuImpresiones();
+			option = leerOpcion();
+			ejecutaSubmenuImpresiones(option);
+		} while (option != 0);
+	}
+
+	public static void mostrarSubmenuImpresiones() {
+		System.out.println("Impresiones:\n" + "1.Marcar como terminada\n" + "2.Registrar fallida\n"
+				+ "3.Ver impresiones de un pedido\n" + "0.Volver al menu anterior");
+		System.out.print("Elige tu opción:");
+	}
+		
+
+	public static void ejecutaSubmenuImpresiones(int option) {
+		switch (option) {
+		case 1 -> System.out.println("Proximamente");
+		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
 		}
 	}
 
