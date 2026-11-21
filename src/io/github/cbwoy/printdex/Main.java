@@ -10,10 +10,10 @@ public class Main {
 		do {
 			mostrarMenu();
 			System.out.print("Elige tu opción:");
-			leerOpcion();
+			option = leerOpcion();
 			ejecutaMenu(option);
 		} while (option != 0);
-		
+
 	}
 
 	public static void mostrarMenu() {
@@ -24,7 +24,7 @@ public class Main {
 	public static void ejecutaMenu(int option) {
 		switch (option) {
 		case 1 -> System.out.println("Proximamente calculadora");
-		case 2 -> System.out.println("Proximamente pedidos");
+		case 2 -> abrirSubmenuPedidos();		
 		case 3 -> System.out.println("Proximamente impresiones");
 		case 4 -> System.out.println("Proximamente inventario");
 		case 5 -> System.out.println("Proximamente registro");
@@ -32,20 +32,43 @@ public class Main {
 		case 7 -> System.out.println("Proximamente configuración");
 		case 0 -> System.out.println("Muchas gracias por venir");
 		default -> System.out.println("Has elegido una opción invalida");
-		
+
 		}
 	}
-	public static int leerOpcion() {
-	    while (!sc.hasNextInt()) {
-	        System.out.println("Error: Por favor, introduce un número válido.");
-	        sc.nextLine(); 
-	        System.out.print("Inténtalo de nuevo: ");
-	    }
-	    
-	    int option = sc.nextInt();
-	    sc.nextLine(); 
-	    return option;
+
+	public static void abrirSubmenuPedidos() {
+		int option=0;
+		do {
+		System.out.println("Pedidos:\n" + "1.Registrar pedido\n" + "2.Pedidos en curso\n" + "3.Historial de pedidos\n"
+				+ "0.Volver al menu anterior");
+		System.out.print("Elige tu opción:");
+		option=leerOpcion();
+		ejecutaSubmenuPedidos(option);
+		}while(option!=0);
 	}
-	
-	
+
+	public static void ejecutaSubmenuPedidos(int option) {
+
+		switch (option) {
+		case 1 -> System.out.println("Proximamente");
+		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
+
+		}
+	}
+
+	public static int leerOpcion() {
+		while (!sc.hasNextInt()) {
+			System.out.println("Error: Por favor, introduce un número válido.");
+			sc.nextLine();
+			System.out.print("Inténtalo de nuevo: ");
+		}
+
+		int option = sc.nextInt();
+		sc.nextLine();
+		return option;
+	}
+
 }
