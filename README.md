@@ -78,6 +78,9 @@ Estoy aprendiendo Java en el Grado Superior en Desarrollo de Aplicaciones Web (D
 
 El proyecto evoluciona con retos que he llamado **medallas** (siguiendo la dinámica de un entrenador Pokémon): son mi hoja de ruta para aprender Java.
 
+## 📄 Licencia
+
+Este proyecto está bajo la licencia [PolyForm Noncommercial 1.0.0](LICENSE.md): puedes usarlo, estudiarlo y modificarlo con fines no comerciales.
 ---
 
 Hecho por cbwoy · 2026
