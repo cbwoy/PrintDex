@@ -33,12 +33,12 @@ public class Entrada extends Main {
 	public static String leerTexto() {
 		String texto = null;
 		do {
-			 texto = sc.nextLine().trim();
-			 if(texto.isEmpty()) {
-				 System.out.println("El texto no puede estar vacío. Introduce un texto válido");
-			 }
-		}while(texto.isEmpty());
-		
+			texto = sc.nextLine().trim();
+			if (texto.isEmpty()) {
+				System.out.println("El texto no puede estar vacío. Introduce un texto válido");
+			}
+		} while (texto.isEmpty());
+
 		return texto;
 	}
 }
