@@ -98,8 +98,46 @@ public class Main {
 
 	public static void ejecutaSubmenuRegistro(int option) {
 		switch (option) {
+		case 1 -> abrirSubmenuClientes();
+		case 2 -> abrirSubmenuDisennos();
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
+		}
+	}
+
+	public static void abrirSubmenuClientes() {
+		int option = 0;
+		do {
+			mostrarMenu("CLIENTES", MENU_CLIENTE);
+			option = leerOpcion();
+			ejecutaSubmenuClientes(option);
+		} while (option != 0);
+	}
+
+	public static void ejecutaSubmenuClientes(int option) {
+		switch (option) {
 		case 1 -> System.out.println("Proximamente");
 		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
+		}
+	}
+
+	public static void abrirSubmenuDisennos() {
+		int option = 0;
+		do {
+			mostrarMenu("DISEÑOS", MENU_DISENNO);
+			option = leerOpcion();
+			ejecutaSubmenuDisennos(option);
+		} while (option != 0);
+	}
+
+	public static void ejecutaSubmenuDisennos(int option) {
+		switch (option) {
+		case 1 -> System.out.println("Proximamente");
+		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
 		case 0 -> System.out.println("Vuelves al menu anterior");
 		default -> System.out.println("Has elegido una opción incorrecta");
 		}
@@ -116,12 +154,55 @@ public class Main {
 
 	public static void ejecutaSubmenuInventario(int option) {
 		switch (option) {
-		case 1 -> System.out.println("Proximamente");
-		case 2 -> System.out.println("Proximamente");
+		case 1 -> abrirSubmenuFilamentos();
+		case 2 -> abrirSubmenuMaterialesExtra();
 		case 0 -> System.out.println("Vuelves al menu anterior");
 		default -> System.out.println("Has elegido una opción incorrecta");
 		}
 
+	}
+
+	public static void abrirSubmenuFilamentos() {
+		int option = 0;
+		do {
+			mostrarMenu("FILAMENTOS", MENU_FILAMENTO);
+			option = leerOpcion();
+			ejecutaSubmenuFilamentos(option);
+
+		} while (option != 0);
+
+	}
+
+	public static void ejecutaSubmenuFilamentos(int option) {
+		switch (option) {
+		case 1 -> System.out.println("Proximamente");
+		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
+		}
+
+	}
+
+	public static void abrirSubmenuMaterialesExtra() {
+		int option = 0;
+		do {
+			mostrarMenu("MATERIALES EXTRA", MENU_MATERIAL_EXTRA);
+			option = leerOpcion();
+			ejecutaSubmenuMaterialesExtra(option);
+
+		} while (option != 0);
+
+	}
+
+	public static void ejecutaSubmenuMaterialesExtra(int option) {
+		switch (option) {
+		case 1 -> System.out.println("Proximamente");
+		case 2 -> System.out.println("Proximamente");
+		case 3 -> System.out.println("Proximamente");
+		case 0 -> System.out.println("Vuelves al menu anterior");
+		default -> System.out.println("Has elegido una opción incorrecta");
+		}
 	}
 
 	public static int leerOpcion() {
