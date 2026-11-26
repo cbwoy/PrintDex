@@ -1,9 +1,7 @@
 package io.github.cbwoy.printdex;
 
-import java.util.Scanner;
-
 public class Main {
-	private static Scanner sc = new Scanner(System.in);
+
 	private static final String[] MENU_PRINTDEX = { "Salir", "Calculadora", "Pedidos", "Impresiones", "Inventario",
 			"Registro", "Estadísticas", "Configuración" };
 	private static final String[] MENU_PEDIDO = { "Volver al menú anterior", "Registrar pedido", "Pedidos en curso",
@@ -25,7 +23,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("PRINTDEX", MENU_PRINTDEX);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaMenu(option);
 		} while (option != 0);
 
@@ -50,7 +48,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("PEDIDOS", MENU_PEDIDO);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuPedidos(option);
 		} while (option != 0);
 	}
@@ -71,7 +69,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("IMPRESIONES", MENU_IMPRESION);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuImpresiones(option);
 		} while (option != 0);
 	}
@@ -90,7 +88,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("REGISTRO", MENU_REGISTRO);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuRegistro(option);
 		} while (option != 0);
 
@@ -109,7 +107,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("CLIENTES", MENU_CLIENTE);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuClientes(option);
 		} while (option != 0);
 	}
@@ -128,7 +126,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("DISEÑOS", MENU_DISENNO);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuDisennos(option);
 		} while (option != 0);
 	}
@@ -147,7 +145,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("INVENTARIO", MENU_INVENTARIO);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuInventario(option);
 		} while (option != 0);
 	}
@@ -166,7 +164,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("FILAMENTOS", MENU_FILAMENTO);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuFilamentos(option);
 
 		} while (option != 0);
@@ -188,7 +186,7 @@ public class Main {
 		int option = 0;
 		do {
 			mostrarMenu("MATERIALES EXTRA", MENU_MATERIAL_EXTRA);
-			option = leerOpcion();
+			option = Entrada.leerOpcion();
 			ejecutaSubmenuMaterialesExtra(option);
 
 		} while (option != 0);
@@ -203,18 +201,6 @@ public class Main {
 		case 0 -> System.out.println("Vuelves al menu anterior");
 		default -> System.out.println("Has elegido una opción incorrecta");
 		}
-	}
-
-	public static int leerOpcion() {
-		while (!sc.hasNextInt()) {
-			System.out.println("Error: Por favor, introduce un número válido.");
-			sc.nextLine();
-			System.out.print("Inténtalo de nuevo: ");
-		}
-
-		int option = sc.nextInt();
-		sc.nextLine();
-		return option;
 	}
 
 	public static void mostrarMenu(String titulo, String[] opciones) {
