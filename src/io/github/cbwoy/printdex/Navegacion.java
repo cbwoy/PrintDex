@@ -1,6 +1,6 @@
 package io.github.cbwoy.printdex;
 
-public class Menu {
+public class Navegacion {
 
 	private static final String[] MENU_PRINTDEX = { "Salir", "Calculadora", "Pedidos", "Impresiones", "Inventario",
 			"Registro", "Estadísticas", "Configuración" };
@@ -22,6 +22,7 @@ public class Menu {
 	public static void abrirMenuPrincipal() {
 		int option = 0;
 		do {
+			System.out.println();
 			mostrarMenu("PRINTDEX", MENU_PRINTDEX);
 			option = Entrada.leerOpcion();
 			ejecutaMenu(option);
