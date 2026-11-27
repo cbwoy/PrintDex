@@ -54,16 +54,6 @@ public class Navegacion {
 		}
 	}
 
-	private static void mostrarMenu(String titulo, String[] opciones) {
-		System.out.println(titulo);
-		for (int i = 1; i < opciones.length; i++) {
-			System.out.println(i + "." + opciones[i]);
-
-		}
-		System.out.println("0." + opciones[0]);
-		System.out.print("Elige tu opción:");
-	}
-
 	private static void abrirSubmenuPedidos() {
 		int option = 0;
 		do {
